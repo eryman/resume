@@ -8,18 +8,21 @@ This is empty on purpose! Your code to build the resume will go here.
  		"title" : "President, Producer, Promoter, Emcee",
  		"location" : "Long Island, NY",
  		"dates" : "2014-Present",
+ 		"url" : "http://www.mropresents.com",
  		"description" : "Ran large-scale nerd-culture-themed shows throughout Long Island, featuring live music, burlesque, cosplay contests, video game tournaments, and more."
 	},{
  		"employer" : "Music Simply Music",
  		"title" : "Piano Facilitator",
  		"location" : "Nesconset, NY",
  		"dates" : "2013-Present",
+ 		"url" : "http://www.musicsimplymusic.com",
  		"description" : "Piano teacher - teaching individual lessons from students' homes"
 	},{
 		"employer" : "Northern Highlands Regional High School",
  		"title" : "Music Teacher",
  		"location" : "Allendale, NJ",
  		"dates" : "2008-2013",
+ 		"url" : "http://www.northernhighlands.org",
  		"description" : "Taught Honors and AP Music Theory, General Music, and an afterschool honors choir.  Duties also included piano accompaniment for the choirs and music direction for the school's annual musical theatre production."
 	}]
  };
@@ -77,6 +80,7 @@ education.display = function() {
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		formattedSchoolName = formattedSchoolName.replace("#", education.schools[school].url);
 		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
@@ -91,6 +95,7 @@ education.display = function() {
 	for (course in education.onlineCourses) {
 		$("#education").append(HTMLschoolStart);
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		formattedOnlineTitle = formattedOnlineTitle.replace("#", education.onlineCourses[course].url);
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
@@ -118,6 +123,7 @@ work.display = function(){
  for (job in work.jobs) {
  	$("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    formattedEmployer = formattedEmployer.replace("#", work.jobs[job].url);
     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
     var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
