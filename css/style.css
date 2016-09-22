@@ -92,6 +92,22 @@ a {
   display: block;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+a.contact-link {
+  color: #fff;
+  margin-top: 0;
+  padding-top: 0;
+  display: inline-block;
+}
+
+a.contact-link:hover {
+  color: #1199c3;
+  text-decoration: none;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
@@ -211,6 +227,10 @@ span {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
+}
+
+.map-marker{
+  color: #4a4a4a;
 }
 
 @media only screen and (min-width: 750px) {
